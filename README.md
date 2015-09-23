@@ -1,18 +1,34 @@
 # SSLTool 
 
-## Burp
-https://portswigger.net/burp/downloadfree.html
+## Online Tools
 
-## SSLyze
-https://github.com/nabla-c0d3/sslyze/releases
+###Qualys SSL Labs
+* https://www.ssllabs.com/ssltest/
 
-## SSLScan
+### Symantec SSL Cert Tools
+* https://cryptoreport.websecurity.symantec.com/checker/
 
-http://sourceforge.net/projects/sslscan/
+## Offline Tools
+### Burp
+* https://portswigger.net/burp/downloadfree.html
 
-## SSLScan (rbsec)
-https://github.com/rbsec/sslscan
-https://github.com/rbsec/sslscan/releases
+### OpenSSL
+* https://www.openssl.org/
 
-## TestSSLServer
-http://www.bolet.org/TestSSLServer/
+### SSLyze
+* https://github.com/nabla-c0d3/sslyze/releases/
+
+### SSLScan
+* http://sourceforge.net/projects/sslscan/
+
+### SSLScan (rbsec)
+* https://github.com/rbsec/sslscan/
+* https://github.com/rbsec/sslscan/releases/
+
+### TestSSLServer
+* http://www.bolet.org/TestSSLServer/
+
+## Books
+### Bulletproof SSL and TLS
+* https://www.feistyduck.com/books/bulletproof-ssl-and-tls/
+* https://github.com/ivanr/bulletproof-tls/

@@ -1,5 +1,6 @@
 @echo off
 
-TestSSLServer\TestSSLServer.exe %1 
+java -jar TestSSLServer\TestSSLServer.jar %1
+::TestSSLServer\TestSSLServer.exe %1 
 
 @echo on
