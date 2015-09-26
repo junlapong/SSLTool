@@ -2,7 +2,7 @@
 
 ::------------------------------------------------------------------------
 :: PROXY ::
-:: SET PROXY="http://username:password@ptoxy-host:proxy-port"
+:: SET PROXY="http://username:password@proxy-host:proxy-port"
 SET PROXY="http://127.0.0.1:3128"
 
 ::------------------------------------------------------------------------
