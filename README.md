@@ -28,6 +28,9 @@
 ### TestSSLServer
 * http://www.bolet.org/TestSSLServer/
 
+### Portecle - GUI for creating, managing keystores, certificates, etc
+* http://portecle.sourceforge.net/
+
 ## Books
 ### Bulletproof SSL and TLS
 * https://www.feistyduck.com/books/bulletproof-ssl-and-tls/
