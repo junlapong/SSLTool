@@ -1,0 +1,17 @@
+# Nmap 6.49BETA6 scan initiated Fri Nov 06 00:05:29 2015 as: nmap.exe -p 443 --script ssl-enum-ciphers -oN poodle_443 eservicesapp.mwa.co.th
+Nmap scan report for eservicesapp.mwa.co.th (115.31.184.216)
+Host is up (0.037s latency).
+PORT    STATE SERVICE
+443/tcp open  https
+| ssl-enum-ciphers: 
+|   TLSv1.0: 
+|     ciphers: 
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|     compressors: 
+|       NULL
+|     cipher preference: client
+|_  least strength: C
+
+# Nmap done at Fri Nov 06 00:05:32 2015 -- 1 IP address (1 host up) scanned in 3.58 seconds
