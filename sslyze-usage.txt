@@ -1,0 +1,11 @@
+usage
+
+1. open Command Promt
+2. cd D:\SSLTool
+3. run sslyze.bat domain.to.test
+4. see output
+
+ถ้าใช้ผ่าน proxy ให้ใช้ sslyze-proxy.bat แทน
+run D:\SSLTool>sslyze-proxy.bat domain.to.test
+
+--- END ---
