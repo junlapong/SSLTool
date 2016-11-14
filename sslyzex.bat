@@ -11,7 +11,7 @@ sslyze_cli\sslyze_cli.exe ^
 --https_tunnel=%PROXY% ^
 --regular ^
 --hsts ^
---ca_file=.\sslyze_cli\data\trust_stores\CertSrv_20290523.pem ^
+--ca_file=.\sslyze_cli\data\trust_stores\BAY_Root_CA.crt ^
 %1
 
 ::--xml_out=%1.xml
