@@ -2,7 +2,7 @@
 
 ## Online Tools
 
-###Qualys SSL Labs
+### Qualys SSL Labs
 * https://www.ssllabs.com/ssltest/
 
 ### Symantec SSL Cert Tools
@@ -20,6 +20,15 @@
 
 ### SSLyze
 * https://github.com/nabla-c0d3/sslyze/releases/
+
+```
+### OS X Installation ###
+brew install python
+pip install sslyze
+
+### Test ###
+sslyze --regular www.google.co.th
+```
 
 ### SSLScan
 * http://sourceforge.net/projects/sslscan/
