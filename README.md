@@ -9,6 +9,8 @@
 * https://cryptoreport.websecurity.symantec.com/checker/
 
 ### Check Headers
+* https://securityheaders.io/
+* https://httpsecurityreport.com/
 * http://cyh.herokuapp.com/cyh
 
 ## Offline Tools
