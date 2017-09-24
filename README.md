@@ -1,6 +1,8 @@
-# SSLTool 
+SSLTool 
+=======
 
-## Online Tools
+Online Tools
+------------
 
 ### Qualys SSL Labs
 * https://www.ssllabs.com/ssltest/
@@ -13,15 +15,18 @@
 * https://httpsecurityreport.com/
 * http://cyh.herokuapp.com/cyh
 
-## Offline Tools
+Offline Tools
+-------------
+
 ### Burp
 * https://portswigger.net/burp/downloadfree.html
 
 ### OpenSSL
 * https://www.openssl.org/
 
-### Test SSL Connection
 ```
+### Test SSL Connection ###
+
 openssl s_client -connect server.com:443
 ```
 
@@ -42,7 +47,6 @@ sslyze --regular www.google.co.th
 
 ### SSLScan (rbsec)
 * https://github.com/rbsec/sslscan/
-* https://github.com/rbsec/sslscan/releases/
 
 ### TestSSLServer
 * http://www.bolet.org/TestSSLServer/
@@ -53,6 +57,8 @@ sslyze --regular www.google.co.th
 ### A few frequently used SSL commands
 * http://shib.kuleuven.be/docs/ssl_commands.shtml
 
+### Java Keytool
+
 #### Convertion between JKS and P12
 ```
 # JKS → P12:
@@ -62,18 +68,15 @@ keytool -importkeystore -srckeystore keystore.jks -srcstoretype JKS -deststorety
 keytool -importkeystore -srckeystore keystore.p12 -srcstoretype PKCS12 -deststoretype JKS -destkeystore keystore.jks
 ```
 
-### Java Keytool
-
-#### create keystore
+#### Create keystore
 ```
-# SHA256
 keytool -genkey -alias secbank -keyalg RSA -keysize 2048 -dname "CN=localhost, OU=ALL STAR C(*)DING, O=BAY, L=Bangkok, ST=Bangkok, C=TH" -keystore secbank.jks -validity 365
 
 # LIST
 keytool -list -v -keystore secbank.jks
 ```
 
-#### export public key
+#### Export public key
 ```
 ## PEM (ASCII) ##
 keytool -exportcert -alias secbank -keystore secbank.jks -rfc -file secbank-pem.cer
@@ -82,7 +85,7 @@ keytool -exportcert -alias secbank -keystore secbank.jks -rfc -file secbank-pem.
 keytool -exportcert -alias secbank -keystore secbank.jks -file secbank.cer
 ```
 
-#### export private key
+#### Export private key
 ```
 ## PEM (ASCII) ##
 openssl pkcs12 -in secbank.p12 -nodes -nocerts -out secbank-pem.key
@@ -111,13 +114,14 @@ openssl rsa -in secbank-pem.key -outform der -pubout | openssl dgst -sha256 -bin
 
 Open a terminal and follow the following commands.
 ```
-curl  -E /path/to/client/certificate --key /path/to/client/private/key https://server/url/path
+curl -E /path/to/client/certificate --key /path/to/client/private/key https://server/url/path
 ```
 
 Ex:
 ```
-curl -E /path/to/client/certificate.prm --key /path/to/client/clientprivatekey.pem https://commonName/
+curl -E /path/to/client/certificate.pem --key /path/to/client/clientprivatekey.pem https://commonName/
 ```
+
 Notes: `commonName` in above server url is the one given while generating the server's certificate
 
 ```
@@ -177,7 +181,9 @@ PORT    STATE SERVICE
 |_  least strength: C
 ```
 
-## Books
+Books
+-----
+
 ### Bulletproof SSL and TLS
 * https://www.feistyduck.com/books/bulletproof-ssl-and-tls/
 * https://github.com/ivanr/bulletproof-tls/
