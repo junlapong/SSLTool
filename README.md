@@ -1,28 +1,25 @@
-SSLTool 
-=======
+# SSLTool 
 
-Online Tools
-------------
+## Online Tools
 
 ### Qualys SSL Labs
-* https://www.ssllabs.com/ssltest/
 
-### Symantec SSL Cert Tools
-* https://cryptoreport.websecurity.symantec.com/checker/
+- https://www.ssllabs.com/ssltest/
 
 ### Check Headers
-* https://securityheaders.io/
-* https://httpsecurityreport.com/
-* http://cyh.herokuapp.com/cyh
 
-Offline Tools
--------------
+- https://securityheaders.io/
+- http://cyh.herokuapp.com/cyh
+
+## Offline Tools
 
 ### Burp
-* https://portswigger.net/burp/downloadfree.html
+
+- https://portswigger.net/burp/downloadfree.html
 
 ### OpenSSL
-* https://www.openssl.org/
+
+- https://www.openssl.org/
 
 ```
 ### Test SSL Connection ###
@@ -31,7 +28,8 @@ openssl s_client -connect server.com:443
 ```
 
 ### SSLyze
-* https://github.com/nabla-c0d3/sslyze/releases/
+
+- https://github.com/nabla-c0d3/sslyze/releases/
 
 ```
 ### OS X Installation ###
@@ -43,23 +41,49 @@ sslyze --regular www.google.co.th
 ```
 
 ### SSLScan
-* http://sourceforge.net/projects/sslscan/
+
+- http://sourceforge.net/projects/sslscan/
 
 ### SSLScan (rbsec)
-* https://github.com/rbsec/sslscan/
+
+- https://github.com/rbsec/sslscan/
 
 ### TestSSLServer
-* http://www.bolet.org/TestSSLServer/
+
+- http://www.bolet.org/TestSSLServer/
 
 ### Portecle - GUI for creating, managing keystores, certificates, etc
-* http://portecle.sourceforge.net/
+
+- http://portecle.sourceforge.net/
 
 ### A few frequently used SSL commands
-* http://shib.kuleuven.be/docs/ssl_commands.shtml
+
+- http://shib.kuleuven.be/docs/ssl_commands.shtml
+
+
+### Generate Self-Signed Certificates
+
+**Go**
+
+- https://github.com/FiloSottile/mkcert
+- https://github.com/Shyp/generate-tls-cert
+
+```
+# install
+go get -u github.com/Shyp/generate-tls-cert
+
+# example
+generate-tls-cert --host=localhost,127.0.0.1
+
+# check
+openssl x509 -text -noout -in leaf.pem | grep "DNS"
+        DNS:localhost, IP Address:127.0.0.1
+```
 
 ### Java Keytool
 
 #### Convertion between JKS and P12
+
 ```
 # JKS → P12:
 keytool -importkeystore -srckeystore keystore.jks -srcstoretype JKS -deststoretype PKCS12 -destkeystore keystore.p12
@@ -69,6 +93,7 @@ keytool -importkeystore -srckeystore keystore.p12 -srcstoretype PKCS12 -deststor
 ```
 
 #### Create keystore
+
 ```
 keytool -genkey -alias secbank -keyalg RSA -keysize 2048 -dname "CN=localhost, OU=ALL STAR C(*)DING, O=BAY, L=Bangkok, ST=Bangkok, C=TH" -keystore secbank.jks -validity 365
 
@@ -77,6 +102,7 @@ keytool -list -v -keystore secbank.jks
 ```
 
 #### Export public key
+
 ```
 ## PEM (ASCII) ##
 keytool -exportcert -alias secbank -keystore secbank.jks -rfc -file secbank-pem.cer
@@ -86,6 +112,7 @@ keytool -exportcert -alias secbank -keystore secbank.jks -file secbank.cer
 ```
 
 #### Export private key
+
 ```
 ## PEM (ASCII) ##
 openssl pkcs12 -in secbank.p12 -nodes -nocerts -out secbank-pem.key
@@ -95,9 +122,11 @@ openssl pkcs12 -in secbank.p12 -nocerts -out secbank.key
 ```
 
 ### HTTP Public Key Pinning (HPKP)
-* https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning
 
 #### gen pin-sha256 for HPKP
+
 ```
 ## from public key (PEM)
 openssl x509 -in secbank-pem.cer -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
@@ -108,16 +137,18 @@ openssl rsa -in secbank-pem.key -outform der -pubout | openssl dgst -sha256 -bin
 
 ### cURL
 
-* [Two-way ssl using cURL](http://venkateshragi.blogspot.com/2013/04/two-way-ssl-using-curl.html)
+- [Two-way ssl using cURL](http://venkateshragi.blogspot.com/2013/04/two-way-ssl-using-curl.html)
 
 #### Using cURL for two-way ssl communication
 
 Open a terminal and follow the following commands.
+
 ```
 curl -E /path/to/client/certificate --key /path/to/client/private/key https://server/url/path
 ```
 
 Ex:
+
 ```
 curl -E /path/to/client/certificate.pem --key /path/to/client/clientprivatekey.pem https://commonName/
 ```
@@ -181,9 +212,9 @@ PORT    STATE SERVICE
 |_  least strength: C
 ```
 
-Books
------
+## Books
 
 ### Bulletproof SSL and TLS
-* https://www.feistyduck.com/books/bulletproof-ssl-and-tls/
-* https://github.com/ivanr/bulletproof-tls/
+
+- https://www.feistyduck.com/books/bulletproof-ssl-and-tls/
+- https://github.com/ivanr/bulletproof-tls/
